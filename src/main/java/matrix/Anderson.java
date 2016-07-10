@@ -3,8 +3,9 @@ package matrix;
 /**
  * Created by rpadalka on 10.07.16.
  */
-public class Anderson implements DrugDealer, Elected {
+public class Anderson implements DrugDealer, Elected, Human {
 
+    private String name;
     private Pill pill;
 
     public Pill getPill() {
@@ -17,6 +18,16 @@ public class Anderson implements DrugDealer, Elected {
 
     @Override
     public void doSomething() {
-        System.out.println("Mr. Anderson do something!");
+        System.out.println(String.format("%s do something!", name));
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 }

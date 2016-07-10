@@ -11,22 +11,30 @@
     <!--Инициализация Spring PostProcessors-->
     <context:annotation-config/>
 
+    <!--Setter-based dependency injection-->
     <bean id="morpheus" class="matrix.Morpheus">
         <property name="pill" ref="pill"/>
     </bean>
 
+    <!--Constructor-based dependency injection-->
     <bean id="pill" class="matrix.Pill" scope="prototype">
         <constructor-arg name="colour" value="red"/>
     </bean>
 
-    <bean id="neo" class="matrix.Anderson"/>
+    <!--Constructor-based dependency injection-->
+    <bean id="neo" class="matrix.Anderson">
+        <property name="name" value="Neo"/>
+    </bean>
 
-    <bean id="trinity" class="matrix.Trinity"/>
+    <!--Constructor-based dependency injection-->
+    <bean id="trinity" class="matrix.Trinity">
+        <property name="name" value="Trinity"/>
+    </bean>
 
     <aop:config>
         <aop:aspect ref="trinity">
             <aop:pointcut id="trust" expression="execution(* *.doSomething(..))"/>
-            <aop:after pointcut-ref="trust" method="trustInElected"/>
+            <aop:before pointcut-ref="trust" method="trustInElected"/>
         </aop:aspect>
     </aop:config>
 

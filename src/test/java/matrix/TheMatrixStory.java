@@ -38,7 +38,7 @@ public class TheMatrixStory extends TestCase {
         applicationContext.getBean("neo", DrugDealer.class).setPill(morpheus.getPill());
 
         System.out.println(String.format("Trinity ate a %s pill.", trinity.getPill().getColour()));
-        System.out.println(String.format("Neo ate a %s pill.", applicationContext.getBean("neo", DrugDealer.class).getPill().getColour()));
+        System.out.println(String.format("Mr.Anderson ate a %s pill.", applicationContext.getBean("neo", DrugDealer.class).getPill().getColour()));
 
         // Нео делает что-то и Тринити верит в избранного
         applicationContext.getBean("neo", Elected.class).doSomething();
