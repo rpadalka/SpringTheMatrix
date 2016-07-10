@@ -30,12 +30,6 @@ public class TheMatrixStory extends TestCase {
 
     public void testApp() throws InterruptedException {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("wachowskis-film.xml");
-        Morpheus morpheus = (Morpheus) applicationContext.getBean("morpheus");
-        Trinity trinity = (Trinity) applicationContext.getBean("trinity");
-        Anderson neo = (Anderson) applicationContext.getBean("neo");
-
-        // Преобразование из Андерсона в Нео
-        neo.setPill(morpheus.getPill());
-        System.out.println(String.format("Mr. Anderson has eaten %s pill", neo.getPill().getColour()));
+        applicationContext.getBean(Elected.class).doSomething();
     }
 }

@@ -14,8 +14,4 @@ public class Pill {
     public String getColour() {
         return colour;
     }
-
-    public void setColour(String colour) {
-        this.colour = colour;
-    }
 }

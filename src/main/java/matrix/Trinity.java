@@ -14,4 +14,8 @@ public class Trinity implements DrugDealer {
     public void setPill(Pill pill) {
         this.pill = pill;
     }
+
+    public void trustInElected() {
+        System.out.println("Trust in Elected!");
+    }
 }
