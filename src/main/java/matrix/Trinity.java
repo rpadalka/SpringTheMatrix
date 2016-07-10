@@ -16,6 +16,6 @@ public class Trinity implements DrugDealer {
     }
 
     public void trustInElected() {
-        System.out.println("Trust in Elected!");
+        System.out.println("Trinity trust in Elected!");
     }
 }

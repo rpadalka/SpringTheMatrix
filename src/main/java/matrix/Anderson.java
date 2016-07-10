@@ -17,6 +17,6 @@ public class Anderson implements DrugDealer, Elected {
 
     @Override
     public void doSomething() {
-        System.out.println("Do something!");
+        System.out.println("Mr. Anderson do something!");
     }
 }

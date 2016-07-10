@@ -15,7 +15,7 @@
         <property name="pill" ref="pill"/>
     </bean>
 
-    <bean id="pill" class="matrix.Pill">
+    <bean id="pill" class="matrix.Pill" scope="prototype">
         <constructor-arg name="colour" value="red"/>
     </bean>
 
