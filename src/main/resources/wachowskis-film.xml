@@ -21,7 +21,7 @@
         <constructor-arg name="colour" value="red"/>
     </bean>
 
-    <!--Constructor-based dependency injection-->
+    <!--Setter-based dependency injection-->
     <bean id="neo" class="matrix.Anderson">
         <property name="name" value="Neo"/>
     </bean>
