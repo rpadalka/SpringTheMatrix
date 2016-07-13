@@ -26,7 +26,7 @@
         <property name="name" value="Neo"/>
     </bean>
 
-    <!--Constructor-based dependency injection-->
+    <!--Setter-based dependency injection-->
     <bean id="trinity" class="matrix.Trinity">
         <property name="name" value="Trinity"/>
     </bean>
