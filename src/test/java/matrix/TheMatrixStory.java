@@ -1,5 +1,6 @@
 package matrix;
 
+import context.PropertyFileApplicationContext;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -35,12 +36,13 @@ public class TheMatrixStory extends TestCase {
         // Тринити выходит из матрицы
         trinity.setPill(morpheus.getPill());
         // Нео выходит из матрицы
-        applicationContext.getBean("neo", DrugDealer.class).setPill(morpheus.getPill());
+        PropertyFileApplicationContext propertyContext = new PropertyFileApplicationContext("elected.properties");
+        propertyContext.getBean(DrugDealer.class).setPill(morpheus.getPill());
 
         System.out.println(String.format("Trinity ate a %s pill.", trinity.getPill().getColour()));
-        System.out.println(String.format("Mr.Anderson ate a %s pill.", applicationContext.getBean("neo", DrugDealer.class).getPill().getColour()));
+        System.out.println(String.format("Mr.Anderson ate a %s pill.", propertyContext.getBean(DrugDealer.class).getPill().getColour()));
 
         // Нео делает что-то и Тринити верит в избранного
-        applicationContext.getBean("neo", Elected.class).doSomething();
+        propertyContext.getBean(Elected.class).doSomething();
     }
 }
