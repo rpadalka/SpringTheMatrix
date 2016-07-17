@@ -1,10 +1,14 @@
 package matrix;
 
+import matrix.annotation.InjectRandomInt;
+
 /**
  * Created by rpadalka on 10.07.16.
  */
 public class Pill {
 
+    @InjectRandomInt(min = 1, max = 9)
+    private int randomInt;
     private String colour;
 
     public Pill(String colour) {
@@ -13,5 +17,9 @@ public class Pill {
 
     public String getColour() {
         return colour;
+    }
+
+    public int getRandomInt() {
+        return randomInt;
     }
 }

@@ -3,14 +3,18 @@ package matrix;
 /**
  * Created by rpadalka on 10.07.16.
  */
-public class Morpheus implements DrugDealer, Human {
+public abstract class Morpheus implements DrugDealer, Human {
 
     private String name;
     private Pill pill;
 
+    public Morpheus(String name) {
+        this.name = name;
+    }
+
     @Override
     public Pill getPill() {
-        return pill;
+        return makePills();
     }
 
     @Override
@@ -27,4 +31,6 @@ public class Morpheus implements DrugDealer, Human {
     public void setName(String name) {
         this.name = name;
     }
+
+    protected abstract Pill makePills();
 }
