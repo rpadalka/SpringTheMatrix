@@ -1,8 +1,11 @@
 package matrix;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Created by rpadalka on 10.07.16.
  */
+@Component(value = "trinity")
 public class Trinity implements DrugDealer, Human {
 
     private String name;

@@ -1,6 +1,5 @@
 package matrix;
 
-import context.PropertyFileApplicationContext;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -30,19 +29,19 @@ public class TheMatrixStory extends TestCase {
     }
 
     public void testApp() throws InterruptedException {
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("wachowskis-film.xml");
-        Morpheus morpheus = applicationContext.getBean("morpheus", Morpheus.class);
-        Trinity trinity = applicationContext.getBean("trinity", Trinity.class);
+        ClassPathXmlApplicationContext xmlApplicationContext = new ClassPathXmlApplicationContext("XmlConfigApplicationContext.xml");
+        Morpheus morpheus = xmlApplicationContext.getBean("morpheus", Morpheus.class);
+        Trinity trinity = xmlApplicationContext.getBean("trinity", Trinity.class);
         // Тринити выходит из матрицы
         trinity.setPill(morpheus.getPill());
+        trinity.setName("Trinity");
         // Нео выходит из матрицы
-        PropertyFileApplicationContext propertyContext = new PropertyFileApplicationContext("elected.properties");
-        propertyContext.getBean(DrugDealer.class).setPill(morpheus.getPill());
+        xmlApplicationContext.getBean("neo", DrugDealer.class).setPill(morpheus.getPill());
 
         System.out.println(String.format("Trinity ate a %s pill.", trinity.getPill().getColour()));
-        System.out.println(String.format("Mr.Anderson ate a %s pill.", propertyContext.getBean(DrugDealer.class).getPill().getColour()));
+        System.out.println(String.format("Mr.Anderson ate a %s pill.", xmlApplicationContext.getBean("neo", DrugDealer.class).getPill().getColour()));
 
         // Нео делает что-то и Тринити верит в избранного
-        propertyContext.getBean(Elected.class).doSomething();
+        xmlApplicationContext.getBean("neo", Elected.class).doSomething();
     }
 }

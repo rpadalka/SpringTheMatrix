@@ -32,4 +32,12 @@ public class Anderson implements DrugDealer, Elected, Human {
     public void setName(String name) {
         this.name = name;
     }
+
+    private static class ElectedHolder {
+        static Anderson instance = new Anderson();
+    }
+
+    public static Anderson getElected() {
+        return ElectedHolder.instance;
+    }
 }
