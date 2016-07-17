@@ -7,7 +7,7 @@ import matrix.annotation.InjectRandomInt;
  */
 public class Pill {
 
-    @InjectRandomInt(min = 1, max = 9)
+    @InjectRandomInt(min = 1, max = 99)
     private int randomInt;
     private String colour;
 

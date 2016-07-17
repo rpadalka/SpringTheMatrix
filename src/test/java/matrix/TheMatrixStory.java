@@ -3,7 +3,6 @@ package matrix;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -31,9 +30,8 @@ public class TheMatrixStory extends TestCase {
 
     public void testApp() throws InterruptedException {
         ClassPathXmlApplicationContext xmlApplicationContext = new ClassPathXmlApplicationContext("XmlConfigApplicationContext.xml");
-        AnnotationConfigApplicationContext javaApplicationContext = new AnnotationConfigApplicationContext();
 
-        Morpheus morpheus = javaApplicationContext.getBean("morpheus", Morpheus.class);
+        Morpheus morpheus = xmlApplicationContext.getBean("morpheus", Morpheus.class);
         Trinity trinity = xmlApplicationContext.getBean("trinity", Trinity.class);
         // Тринити выходит из матрицы
         trinity.setPill(morpheus.getPill());
