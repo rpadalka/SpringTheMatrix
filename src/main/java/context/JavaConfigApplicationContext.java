@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Scope;
 
 /**
  * Created by rpadalka on 17.07.16.
+ * Lookup-method dependency injection
  */
 @Configuration
 @ComponentScan(basePackages = "matrix")
