@@ -34,7 +34,6 @@ public class TheMatrixStory extends TestCase {
         Trinity trinity = xmlApplicationContext.getBean("trinity", Trinity.class);
         // Тринити выходит из матрицы
         trinity.setPill(morpheus.getPill());
-        trinity.setName("Trinity");
         // Нео выходит из матрицы
         xmlApplicationContext.getBean("neo", DrugDealer.class).setPill(morpheus.getPill());
 

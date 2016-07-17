@@ -11,6 +11,10 @@ public class Trinity implements DrugDealer, Human {
     private String name;
     private Pill pill;
 
+    public Trinity() {
+        this.name = "Trinity";
+    }
+
     @Override
     public Pill getPill() {
         return pill;
