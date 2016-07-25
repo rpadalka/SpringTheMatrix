@@ -8,9 +8,20 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="matrix"/>
-    <context:component-scan base-package="context"/>
 
     <bean class="matrix.postprocessor.InjectRandomIntAnnotationBeanPostProcessor"/>
+
+    <!--Constructor-based dependency injection-->
+    <bean id="pill" class="matrix.Pill" scope="prototype">
+        <constructor-arg name="colour" value="red"/>
+    </bean>
+
+    <!--Constructor-based dependency injection-->
+    <!--lookup-method dependency injection-->
+    <bean id="morpheus" class="matrix.Morpheus">
+        <constructor-arg name="name" value="Morpheus"/>
+        <lookup-method name="makePills" bean="pill"/>
+    </bean>
 
     <!--Setter-based dependency injection-->
     <bean id="neo" class="matrix.Anderson" factory-method="getElected">

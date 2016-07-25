@@ -36,16 +36,16 @@ public class TheMatrixStory extends TestCase {
         // Тринити выходит из матрицы
         trinity.setPill(morpheus.getPill());
         // Нео выходит из матрицы
-        xmlApplicationContext.getBean("neo", DrugDealer.class).setPill(morpheus.getPill());
+        DrugDealer neo = xmlApplicationContext.getBean("neo", DrugDealer.class);
+        neo.setPill(morpheus.getPill());
 
         // Сравниваем, разные ли таблетки ели Тринити и Нео
-        System.out.println("\nPills are equals? " + (trinity.getPill().getRandomInt() == (xmlApplicationContext.getBean("neo", DrugDealer.class)).getPill().getRandomInt()) + "\n");
+        System.out.println("\nPills are equals? " + (trinity.getPill().getRandomInt() == neo.getPill().getRandomInt()) + "\n");
 
         System.out.println(String.format("Trinity ate a %s pill.", trinity.getPill().getColour()));
-        System.out.println(String.format("Mr.Anderson ate a %s pill.", xmlApplicationContext.getBean("neo", DrugDealer.class).getPill().getColour()) + "\n");
+        System.out.println(String.format("Mr.Anderson ate a %s pill.", neo.getPill().getColour()) + "\n");
 
         // Нео делает что-то и Тринити верит в избранного
         xmlApplicationContext.getBean("neo", Elected.class).doSomething();
-        System.out.println("\n");
     }
 }
