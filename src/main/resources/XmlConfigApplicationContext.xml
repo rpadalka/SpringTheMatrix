@@ -9,8 +9,6 @@
 
     <context:component-scan base-package="matrix"/>
 
-    <context:annotation-config/>
-
     <!--Registry BeanPostProcessor-->
     <bean class="matrix.postprocessor.InjectRandomIntAnnotationBeanPostProcessor"/>
     <bean class="matrix.postprocessor.NimbleHandlerBeanPostProcessor"/>
