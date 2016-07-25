@@ -1,9 +1,12 @@
 package matrix;
 
+import matrix.annotation.Nimble;
+
 /**
  * Created by rpadalka on 10.07.16.
  */
-public class Anderson implements DrugDealer, Elected, Human {
+@Nimble
+public class Anderson implements DrugDealer, ChosenOne, Human {
 
     private String name;
     private Pill pill;
@@ -19,8 +22,8 @@ public class Anderson implements DrugDealer, Elected, Human {
     }
 
     @Override
-    public void doSomething() {
-        System.out.println(String.format("%s do something!", name));
+    public void doesSomething() {
+        System.out.println(String.format("%s does something!", name));
     }
 
     @Override

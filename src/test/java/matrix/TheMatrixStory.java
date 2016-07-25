@@ -45,7 +45,10 @@ public class TheMatrixStory extends TestCase {
         System.out.println(String.format("Trinity ate a %s pill.", trinity.getPill().getColour()));
         System.out.println(String.format("Mr.Anderson ate a %s pill.", neo.getPill().getColour()) + "\n");
 
-        // Нео делает что-то и Тринити верит в избранного
-        xmlApplicationContext.getBean("neo", Elected.class).doSomething();
+        while (true) {
+            // Нео делает что-то и Тринити верит в избранного
+            xmlApplicationContext.getBean("neo", ChosenOne.class).doesSomething();
+            Thread.sleep(1000);
+        }
     }
 }

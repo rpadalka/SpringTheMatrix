@@ -9,8 +9,11 @@
 
     <context:component-scan base-package="matrix"/>
 
+    <context:annotation-config/>
+
     <!--Registry BeanPostProcessor-->
     <bean class="matrix.postprocessor.InjectRandomIntAnnotationBeanPostProcessor"/>
+    <bean class="matrix.postprocessor.NimbleHandlerBeanPostProcessor"/>
 
     <!--Constructor-based dependency injection-->
     <bean id="pill" class="matrix.Pill" scope="prototype">
@@ -31,7 +34,7 @@
 
     <aop:config>
         <aop:aspect ref="trinity">
-            <aop:pointcut id="trust" expression="execution(* *.doSomething(..))"/>
+            <aop:pointcut id="trust" expression="execution(* *.doesSomething(..))"/>
             <aop:before pointcut-ref="trust" method="trustInElected"/>
         </aop:aspect>
     </aop:config>

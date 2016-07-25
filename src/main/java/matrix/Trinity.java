@@ -26,7 +26,7 @@ public class Trinity implements DrugDealer, Human {
     }
 
     public void trustInElected() {
-        System.out.println(String.format("%s trust in Elected!", name));
+        System.out.println(String.format("%s trust in ChosenOne!", name));
     }
 
     @Override
