@@ -8,8 +8,8 @@ public abstract class Morpheus implements DrugDealer, Human {
     private String name;
     private Pill pill;
 
-    public Morpheus(String name) {
-        this.name = name;
+    public Morpheus() {
+        this.name = "Morpheus";
     }
 
     @Override

@@ -9,20 +9,9 @@
 
     <context:component-scan base-package="matrix"/>
 
-    <!--Registry BeanPostProcessor-->
-    <bean class="matrix.postprocessor.InjectRandomIntAnnotationBeanPostProcessor"/>
-    <bean class="matrix.postprocessor.NimbleHandlerBeanPostProcessor"/>
-
-    <!--Constructor-based dependency injection-->
     <!--lookup-method dependency injection-->
     <bean id="morpheus" class="matrix.Morpheus">
-        <constructor-arg name="name" value="Morpheus"/>
         <lookup-method name="makePills" bean="pill"/>
-    </bean>
-
-    <!--Setter-based dependency injection-->
-    <bean id="neo" class="matrix.Anderson" factory-method="getElected">
-        <property name="name" value="Neo"/>
     </bean>
 
     <aop:config>

@@ -4,6 +4,7 @@ import matrix.annotation.Nimble;
 import matrix.mbeans.NimbleController;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Component;
 
 import javax.management.*;
 import java.lang.management.ManagementFactory;
@@ -14,6 +15,7 @@ import java.util.Map;
 /**
  * Created by rpadalka on 25.7.16.
  */
+@Component
 public class NimbleHandlerBeanPostProcessor implements BeanPostProcessor {
 
     private Map<String, Class> map = new HashMap<>();

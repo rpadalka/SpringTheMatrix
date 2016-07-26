@@ -3,6 +3,7 @@ package matrix.postprocessor;
 import matrix.annotation.InjectRandomInt;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Component;
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Field;
@@ -11,6 +12,7 @@ import java.util.Random;
 /**
  * Created by rpadalka on 17.07.16.
  */
+@Component
 public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProcessor {
 
     @Override

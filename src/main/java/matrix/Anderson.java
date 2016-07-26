@@ -1,10 +1,14 @@
 package matrix;
 
 import matrix.annotation.Nimble;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 /**
  * Created by rpadalka on 10.07.16.
  */
+@Component("neo")
 @Nimble
 public class Anderson implements DrugDealer, ChosenOne, Human {
 
@@ -40,6 +44,7 @@ public class Anderson implements DrugDealer, ChosenOne, Human {
         static Anderson instance = new Anderson();
     }
 
+    @PostConstruct
     public static Anderson getElected() {
         return ElectedHolder.instance;
     }
