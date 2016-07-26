@@ -14,10 +14,15 @@
         <lookup-method name="makePills" bean="pill"/>
     </bean>
 
+    <!--Setter-based dependency injection-->
+    <bean id="neo" class="matrix.Anderson" factory-method="getChosenOne">
+        <property name="name" value="Neo"/>
+    </bean>
+
     <aop:config>
         <aop:aspect ref="trinity">
             <aop:pointcut id="trust" expression="execution(* *.doesSomething(..))"/>
-            <aop:before pointcut-ref="trust" method="trustInElected"/>
+            <aop:before pointcut-ref="trust" method="trustInChosenOne"/>
         </aop:aspect>
     </aop:config>
 
