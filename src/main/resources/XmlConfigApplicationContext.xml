@@ -14,11 +14,6 @@
     <bean class="matrix.postprocessor.NimbleHandlerBeanPostProcessor"/>
 
     <!--Constructor-based dependency injection-->
-    <bean id="pill" class="matrix.Pill" scope="prototype">
-        <constructor-arg name="colour" value="red"/>
-    </bean>
-
-    <!--Constructor-based dependency injection-->
     <!--lookup-method dependency injection-->
     <bean id="morpheus" class="matrix.Morpheus">
         <constructor-arg name="name" value="Morpheus"/>
