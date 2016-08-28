@@ -20,9 +20,9 @@ public class PeriodicalScope implements Scope {
     public Object get(String s, ObjectFactory<?> objectFactory) {
         if (map.containsKey(s)) {
             Pair<LocalTime, Object> pair = map.get(s);
-            long secondsSinceLastRequest = ChronoUnit.SECONDS.between(pair.getKey(), LocalTime.now());
+            long secondsSinceLastRequest = ChronoUnit.MICROS.between(pair.getKey(), LocalTime.now());
 
-            if (secondsSinceLastRequest > 3) {
+            if (secondsSinceLastRequest > 1) {
                 map.put(s, new Pair<>(LocalTime.now(), objectFactory.getObject()));
             }
         } else {

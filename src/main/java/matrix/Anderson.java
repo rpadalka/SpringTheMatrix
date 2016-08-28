@@ -1,11 +1,12 @@
 package matrix;
 
 import matrix.annotation.Nimble;
+import matrix.annotation.PostProxy;
 
 /**
  * Created by rpadalka on 10.07.16.
  */
-@Nimble
+@Nimble(newImpl = Neo.class)
 public class Anderson implements DrugDealer, ChosenOne, Human {
 
     private String name;
@@ -22,6 +23,7 @@ public class Anderson implements DrugDealer, ChosenOne, Human {
     }
 
     @Override
+    @PostProxy
     public void doesSomething() {
         System.out.println(String.format("%s does something!\n", name));
     }

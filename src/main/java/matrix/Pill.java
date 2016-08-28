@@ -4,26 +4,25 @@ import matrix.annotation.InjectRandomInt;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 /**
  * Created by rpadalka on 10.07.16.
  */
-@Component("pill")
-@Scope("prototype")
+@Component
+@Scope("periodical")
 public class Pill {
 
     @InjectRandomInt(min = 1, max = 99)
     private int randomInt;
-    private String colour;
-
-    public Pill(String colour) {
-        this.colour = colour;
-    }
+    private PillColour colour;
 
     public Pill() {
-        this.colour = "red";
+        Random random = new Random();
+        this.colour = PillColour.getColourById(random.nextInt(6));
     }
 
-    public String getColour() {
+    public PillColour getColour() {
         return colour;
     }
 

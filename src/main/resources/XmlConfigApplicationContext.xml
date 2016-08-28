@@ -15,7 +15,7 @@
     </bean>
 
     <!--Setter-based dependency injection-->
-    <bean id="neo" class="matrix.Anderson" factory-method="getChosenOne">
+    <bean id="neo" class="matrix.Anderson">
         <property name="name" value="Neo"/>
     </bean>
 

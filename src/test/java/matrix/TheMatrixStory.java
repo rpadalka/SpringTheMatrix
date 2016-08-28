@@ -42,13 +42,12 @@ public class TheMatrixStory extends TestCase {
         // Сравниваем, разные ли таблетки ели Тринити и Нео
         System.out.println("\nPills are equals? " + (trinity.getPill().getRandomInt() == neo.getPill().getRandomInt()) + "\n");
 
-        System.out.println(String.format("Trinity ate a %s pill.", trinity.getPill().getColour()));
-        System.out.println(String.format("Mr.Anderson ate a %s pill.", neo.getPill().getColour()) + "\n");
+        System.out.println(String.format("Trinity ate a %s pill.", trinity.getPill().getColour().name()));
+        System.out.println(String.format("Mr.Anderson ate a %s pill.", neo.getPill().getColour().name()) + "\n");
 
         while (true) {
-            // Нео делает что-то и Тринити верит в избранного
-            xmlApplicationContext.getBean("neo", ChosenOne.class).doesSomething();
             Thread.sleep(1000);
+            System.out.println("Morpheus has a " + morpheus.getPill().getColour().name() + " pill.");
         }
     }
 }
